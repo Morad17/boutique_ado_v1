@@ -50,6 +50,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ Adjust the quantity of the specified amount"""
 
+    print('Reached this view')
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
@@ -84,6 +85,7 @@ def remove_from_bag(request, item_id):
     """ Remove the item from the shopping bag """
 
     try:
+        print('Reached this view')
         product = get_object_or_404(Product, pk=item_id)
         size = None
         if 'product_size' in request.POST:
