@@ -29,8 +29,8 @@ card.addEventListener('change', function (event){
             <span class="icon" role="alert">
                 <i class="fas fa-times"></i>
             </span>
-            <span>${event.error.message}</span>`
-            $(errorDiv).html(html);
+            <span>${event.error.message}</span>`;
+        $(errorDiv).html(html);
     }else{
         errorDiv.textContent = '';
     }
@@ -71,14 +71,11 @@ form.addEventListener('submit', function(ev) {
                         country: $.trim(form.country.value),
                         state: $.trim(form.county.value),
                     }
-
-
                 }
             },
             shipping: {
                 name: $.trim(form.full_name.value),
                 phone: $.trim(form.phone_number.value),
-                email: $.trim(form.email.value),
                 address:{
                     line1: $.trim(form.street_address1.value),
                     line2: $.trim(form.street_address2.value),
@@ -103,7 +100,7 @@ form.addEventListener('submit', function(ev) {
             $('#submit-button').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
+                // form.submit();
             }
         }
     });
